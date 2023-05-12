@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
                         new_ann = {"image_id": ann_obj["tags"][0]["id"], "category_id": img_ann["classId"],
                                  "bbox": [img_ann["points"]["exterior"][0][0], img_ann["points"]["exterior"][0][1],
-                                          bbox_width, bbox_height], "area": area, "iscrowd": 0, "id": img_ann["id"]})
+                                          bbox_width, bbox_height], "area": area, "iscrowd": 0, "id": img_ann["id"]}
 
                         if img_count < train_cap:
                             train_out["annotations"].append(new_ann)
