@@ -9,7 +9,7 @@ This could me more flexible and user friendly, making that is on the to-do list,
 The train/validation split is hardcoded. The number of images for training is defined on the variable ```train_cap``` at the beginning of the script.
 
 - Clone this repository.
-- Place the FSOCO dataset on a subdirectory called ```fsoco_bounding_boxes_train```.
+- Place the FSOCO dataset on a directory on the same level as the repository called ```fsoco_bounding_boxes_train```. ATTENTION: You have to download the bounding boxes version, not the segmentation one.
 - Create this structure of directories:
 	- ```fsoco```
 		- ```train```
