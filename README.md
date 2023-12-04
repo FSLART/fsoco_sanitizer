@@ -11,12 +11,13 @@ The train/validation split is hardcoded. The number of images for training is de
 - Clone this repository.
 - Place the FSOCO dataset on a directory on the same level as the repository called ```fsoco_bounding_boxes_train```. ATTENTION: You have to download the bounding boxes version, not the segmentation one.
 - Create this structure of directories:
-	- ```fsoco```
-		- ```train```
-		- ```val```
-- Run the script ```python3 main.py```.
+	- `fsoco`
+		- `train`
+			- `images`
+		- `val`
+- Run the script `python3 main.py`
 
-After some time, you should have the sanitized dataset on the subdirectory ```fsoco```.
+After some time, you should have the sanitized dataset on the subdirectory `fsoco`.
 
 
 
