@@ -54,9 +54,13 @@ if __name__ == '__main__':
                     new_img = {"file_name": img, "width": width, "height": height, "id": id}
 
                     if img_count < train_cap:
+                        if not os.path.exists(os.path.join(train_out_dir, "images")):
+                            os.makedirs(os.path.join(train_out_dir, "images"))
                         shutil.copy(os.path.join(full_path, img), os.path.join(train_out_dir, "images", img))
                         train_out["images"].append(new_img)
                     else:
+                        if not os.path.exists(os.path.join(val_out_dir, "images")):
+                            os.makedirs(os.path.join(val_out_dir, "images"))
                         shutil.copy(os.path.join(full_path, img), os.path.join(val_out_dir, "images", img))
                         val_out["images"].append(new_img)
 
@@ -85,10 +89,14 @@ if __name__ == '__main__':
                     img_count += 1
 
     print("Writing output annotations files...", end="")
+    if not os.path.exists(os.path.join(train_out_dir, "annotations")):
+        os.makedirs(os.path.join(train_out_dir, "annotations"))
     f_out = open(os.path.join(train_out_dir, "annotations/fsoco.json"), "w")
     f_out.write(json.dumps(train_out))
     f.close()
 
+    if not os.path.exists(os.path.join(val_out_dir, "annotations")):
+        os.makedirs(os.path.join(val_out_dir, "annotations"))
     f_out = open(os.path.join(val_out_dir, "annotations/fsoco.json"), "w")
     f_out.write(json.dumps(val_out))
     f.close()
